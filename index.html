@@ -1,7 +1,172 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Mogimazii's Homepage</title>
+        <style type="text/css">
+            
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+
+body {
+    font-family: "Fira Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav {
+    position: fixed;
+    top: 38.2%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav a {
+    white-space: nowrap;
+}
+
+.primary::before,
+.primary::after {
+    display: table;
+    content: "";
+}
+
+.primary::after {
+    clear: both;
+}
+
+.primary > li {
+    float: left;
+    position: relative;
+    margin-right: 2em;
+}
+
+.primary > li > .title {
+    display: block;
+    padding: 0 1em;
+    background-color: #333;
+    color: #fff;
+    opacity: 0.4;
+    line-height: 2.5;
+    font-weight: 400;
+    cursor: pointer;
+    background-blend-mode: multiply;
+}
+
+.primary > li:hover > .title {
+    opacity: 1;
+}
+
+.primary > li::after {
+    content: "/";
+    display: block;
+    position: absolute;
+    width: 1em;
+    top: 0.75em;
+    right: -1.5em;
+    color: #fff;
+    opacity: 0.7;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.primary > li:last-child::after {
+    display: none;
+}
+
+.secondary {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    font-weight: 400;
+}
+
+li:hover .secondary {
+    opacity: 1;
+    z-index: 0;
+}
+
+.secondary > li {
+    margin-top: 1px;
+    margin-right: 1px;
+    float: left;
+    clear: left;
+}
+
+.secondary a {
+    display: block;
+    padding: 0 1em;
+    line-height: 2;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.secondary a:hover {
+    background-color: #454545;
+    color: #fff;
+}
+
+footer {
+    position: fixed;
+    left: 50%;
+    bottom: 8%;
+    transform: translate(-50%, -50%);
+    background-color: #333;
+    padding: 0.5em 1em;
+    color: #fff;
+    opacity: 0.4;
+    background-blend-mode: multiply;
+}
+
+footer a {
+    border-bottom: 1px solid #666;
+}
+
+footer a:hover {
+    border-bottom-color: #ccc;
+}
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul class="primary">
+                <li>
+                    <a class="title" href="https://space.bilibili.com/2613011">Bilibili</a>
+                </li>
+                <li>
+                    <a class="title" href="#">Twitter</a>
+                </li>
+                <li>
+                    <a class="title" href="https://github.com/Mogimazii">GitHub</a>
+                </li>
+            </ul>
+        </nav>
+        <footer>
+            Yuan Zhenghong（Mogimazii） / Background effect powered by 
+            <a href="http://qrohlf.com/trianglify/">Trianglify</a>
+        </footer>
+        <script src='https://unpkg.com/trianglify@^4/dist/trianglify.bundle.js'></script>
+        <script>
+            const pattern = trianglify({
+              width: window.innerWidth,
+              height: window.innerHeight
+            })
+            document.body.style.backgroundImage = `url(${pattern.toCanvas().toDataURL()})`
+          </script>
+    </body>
 </html>
