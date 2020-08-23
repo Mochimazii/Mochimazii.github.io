@@ -1,0 +1,13 @@
+{
+    "name": "Moochi's Home",
+    "short_name": "Moochi",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "A simply Homepage",
+    "icons": [{
+      "src": "img/halu.ico",
+      "sizes": "48x48",
+      "type": "image/ico"
+    }]
+  }
